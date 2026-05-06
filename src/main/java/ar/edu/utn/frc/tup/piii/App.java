@@ -18,17 +18,17 @@ public class App
 
         ConsoleHelper.printStep("Board Configuration");
         ConsoleHelper.printInput("Chessboard size (n):");
-        Integer n = scanner.nextInt();
+        Integer n = Integer.parseInt(scanner.next());
         
         ConsoleHelper.printInput("Number of obstacles (k):");
-        Integer k = scanner.nextInt();
+        Integer k = Integer.parseInt(scanner.next());
 
         System.out.println();
         ConsoleHelper.printStep("Queen's Initial Position");
         ConsoleHelper.printInput("Row (r_q):");
-        Integer r_q = scanner.nextInt();
+        Integer r_q = Integer.parseInt(scanner.next());
         ConsoleHelper.printInput("Column (c_q):");
-        Integer c_q = scanner.nextInt();
+        Integer c_q = Integer.parseInt(scanner.next());
 
         List<List<Integer>> obstacles = new ArrayList<>();
         if (k > 0) {
@@ -38,9 +38,9 @@ public class App
                 List<Integer> point = new ArrayList<>();
                 System.out.println("  Obstacle " + (i+1) + ":");
                 ConsoleHelper.printInput("    Row:");
-                point.add(scanner.nextInt());
+                point.add(Integer.parseInt(scanner.next()));
                 ConsoleHelper.printInput("    Column:");
-                point.add(scanner.nextInt());
+                point.add(Integer.parseInt(scanner.next()));
                 obstacles.add(point);
             }
         }

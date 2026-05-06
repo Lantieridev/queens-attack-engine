@@ -11,30 +11,30 @@ public class ConsoleHelper {
     public static final String WHITE = "\u001B[37m";
 
     public static void printBanner() {
-        System.out.println(CYAN + BOLD + "===============================================" + RESET);
-        System.out.println(CYAN + BOLD + "    ____  __  _________________   __" + RESET);
-        System.out.println(CYAN + BOLD + "   / __ \\/ / / / ____/ ____/ | / /" + RESET);
-        System.out.println(CYAN + BOLD + "  / / / / / / / __/ / __/ /  |/ / " + RESET);
-        System.out.println(CYAN + BOLD + " / /_/ / /_/ / /___/ /___/ /|  /  " + RESET);
-        System.out.println(CYAN + BOLD + " \\___\\_\\____/_____/_____/_/ |_/   " + RESET);
-        System.out.println(CYAN + BOLD + "           A T T A C K" + RESET);
-        System.out.println(CYAN + BOLD + "===============================================" + RESET);
+        System.out.println(CYAN + BOLD + "╔═════════════════════════════════════════════╗" + RESET);
+        System.out.println(CYAN + BOLD + "║    ____  __  _________________   __         ║" + RESET);
+        System.out.println(CYAN + BOLD + "║   / __ \\/ / / / ____/ ____/ | / /         ║" + RESET);
+        System.out.println(CYAN + BOLD + "║  / / / / / / / __/ / __/ /  |/ /          ║" + RESET);
+        System.out.println(CYAN + BOLD + "║ / /_/ / /_/ / /___/ /___/ /|  /           ║" + RESET);
+        System.out.println(CYAN + BOLD + "║ \\___\\_\\____/_____/_____/_/ |_/            ║" + RESET);
+        System.out.println(CYAN + BOLD + "║           A T T A C K   E N G I N E       ║" + RESET);
+        System.out.println(CYAN + BOLD + "╚═════════════════════════════════════════════╝" + RESET);
         System.out.println(WHITE + "      Professional Logical Engine | Lantieridev" + RESET);
         System.out.println();
     }
 
     public static void printStep(String message) {
-        System.out.println(BLUE + BOLD + "» " + RESET + WHITE + message + RESET);
+        System.out.println(BLUE + BOLD + "❯ " + RESET + WHITE + BOLD + message.toUpperCase() + RESET);
     }
 
     public static void printInput(String label) {
-        System.out.print(YELLOW + label + RESET + " ");
+        System.out.print(CYAN + "  ↳ " + RESET + WHITE + label + RESET + " ");
     }
 
     public static void printResult(int result) {
         System.out.println();
-        System.out.println(GREEN + BOLD + "Calculation Complete!" + RESET);
+        System.out.println(GREEN + BOLD + "✔ CALCULATION COMPLETE" + RESET);
         System.out.println(CYAN + "Total Attackable Squares: " + WHITE + BOLD + result + RESET);
-        System.out.println(GREEN + BOLD + "===============================================" + RESET);
+        System.out.println(GREEN + BOLD + "───────────────────────────────────────────────" + RESET);
     }
 }
