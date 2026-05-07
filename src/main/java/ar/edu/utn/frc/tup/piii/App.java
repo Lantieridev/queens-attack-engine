@@ -17,18 +17,13 @@ public class App
         ConsoleHelper.printBanner();
 
         ConsoleHelper.printStep("Board Configuration");
-        ConsoleHelper.printInput("Chessboard size (n):");
-        Integer n = Integer.parseInt(scanner.next());
-        
-        ConsoleHelper.printInput("Number of obstacles (k):");
-        Integer k = Integer.parseInt(scanner.next());
+        Integer n = readInt(scanner, "Chessboard size (n):");
+        Integer k = readInt(scanner, "Number of obstacles (k):");
 
         System.out.println();
         ConsoleHelper.printStep("Queen's Initial Position");
-        ConsoleHelper.printInput("Row (r_q):");
-        Integer r_q = Integer.parseInt(scanner.next());
-        ConsoleHelper.printInput("Column (c_q):");
-        Integer c_q = Integer.parseInt(scanner.next());
+        Integer r_q = readInt(scanner, "Row (r_q):");
+        Integer c_q = readInt(scanner, "Column (c_q):");
 
         List<List<Integer>> obstacles = new ArrayList<>();
         if (k > 0) {
@@ -37,16 +32,24 @@ public class App
             for(int i = 0; i < k; i++) {
                 List<Integer> point = new ArrayList<>();
                 System.out.println("  Obstacle " + (i+1) + ":");
-                ConsoleHelper.printInput("    Row:");
-                point.add(Integer.parseInt(scanner.next()));
-                ConsoleHelper.printInput("    Column:");
-                point.add(Integer.parseInt(scanner.next()));
+                point.add(readInt(scanner, "    Row:"));
+                point.add(readInt(scanner, "    Column:"));
                 obstacles.add(point);
             }
         }
 
         int result = queen.queensAttack(n, k, r_q, c_q, obstacles);
-        
         ConsoleHelper.printResult(result);
+    }
+
+    private static Integer readInt(Scanner scanner, String label) {
+        while (true) {
+            try {
+                ConsoleHelper.printInput(label);
+                return Integer.parseInt(scanner.next());
+            } catch (NumberFormatException e) {
+                System.out.println(ConsoleHelper.RED + "  ⚠ Invalid input. Please enter a number." + ConsoleHelper.RESET);
+            }
+        }
     }
 }
